@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Reviews - IAN RevUp</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<style>
+/* Header Parallax & Responsive */
+header { height: 100vh; }
+.parallax { background-attachment: fixed; background-size: cover; background-position: center; }
+@media(max-width:768px){ header { height:60vh; } .parallax { background-attachment: scroll; } }
+
+/* Typography Mobile */
+@media(max-width:768px){ h1{font-size:2rem!important;} h2{font-size:1.7rem!important;} p{font-size:1rem!important;} }
+
+/* Navbar */
+nav{flex-wrap:wrap; gap:10px; font-size:.9rem; padding:10px;}
+.nav-link{transition:0.3s;}
+.nav-link:hover{color:#ff0000;}
+
+/* Review Cards */
+.review-card{background:#1b1b1b;padding:25px;border-radius:12px;margin-bottom:25px;transition:transform .4s ease, box-shadow .4s ease;}
+.review-card:hover{transform:scale(1.03); box-shadow:0 10px 30px rgba(0,255,255,0.3);}
+.stars{color:gold; font-size:18px; margin-bottom:10px;}
+
+/* Animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+
+<!-- NAV -->
+<nav class="flex gap-6 justify-center py-4 bg-gray-900 fixed w-full z-50">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="cars.html" class="nav-link">Cars</a>
+    <a href="specialdeals.html" class="nav-link">Special Deals</a>
+    <a href="reviews.html" class="nav-link">Reviews</a>
+</nav>
+
+<!-- HEADER -->
+<header class="relative h-screen parallax" style="background-image:url('assets/images/car-header.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Customer Reviews</h1>
+        <p class="text-2xl mb-6 animate__animated animate__fadeInUp animate__delay-1s">What our clients say about us</p>
+    </div>
+</header>
+
+<!-- REVIEWS SECTION -->
+<section class="py-20 px-4 md:px-20 bg-gray-800">
+    <h2 class="text-4xl font-bold mb-12 text-center">⭐ Client Feedback</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Amazing service! The car exceeded my expectations. Highly recommended!"</p>
+            <strong>- Ahmed</strong>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"The team helped me pick the perfect car and the price was great."</p>
+            <strong>- Sarah</strong>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>"Everything was smooth. Very professional and friendly staff."</p>
+            <strong>- Michael</strong>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

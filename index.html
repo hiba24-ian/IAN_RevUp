@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IAN RevUp - Home</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<style>
+
+/* Header Parallax & Responsive */
+header {
+    height: 100vh;
+}
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+@media(max-width:768px){
+    header { height: 60vh; }
+    .parallax { background-attachment: scroll; }
+}
+
+/* Typography Mobile */
+@media(max-width:768px){
+    h1{font-size:2rem!important;}
+    h2{font-size:1.7rem!important;}
+    p{font-size:1rem!important;}
+    .mobile-padding{padding:1rem!important;}
+}
+
+/* Navbar Responsive */
+@media(max-width:768px){
+    nav{flex-wrap:wrap;gap:10px;font-size:.9rem;padding:10px;}
+}
+
+/* Contact Section */
+.contact-section{
+    position: relative;
+    padding:70px 8%;
+    background: url('assets/images/car-header.jpg') center/cover no-repeat fixed;
+    margin-top:40px;
+    border-top:2px solid #000;
+}
+.contact-overlay{
+    position: absolute; width:100%; height:100%;
+    background: rgba(0,0,0,0.75);
+    top:0; left:0;
+}
+.contact-container{
+    position: relative; z-index:2;
+    color:white; text-align:center;
+    animation: fadeUp 1.4s ease-out forwards; opacity:0;
+}
+.contact-title{font-size:32px;margin-bottom:15px;letter-spacing:2px;}
+.contact-text{font-size:17px;margin-bottom:30px;opacity:0.8;}
+.contact-form{width:100%;max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+.contact-form input,
+.contact-form textarea{
+    width:100%;padding:14px;border-radius:8px;border:none;outline:none;
+    background:#1d1d1d;color:white;font-size:15px;transition:0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{background:#2b2b2b; transform:scale(1.02);}
+.contact-form textarea{height:130px;resize:none;}
+.contact-btn{
+    padding:14px;background:#ff0000;border:none;color:white;font-weight:bold;
+    font-size:16px;border-radius:8px;cursor:pointer;transition:0.3s;letter-spacing:1px;
+}
+.contact-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,0,0,0.4);
+}
+
+/* Animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);}}
+
+</style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+
+<!-- NAV -->
+<nav class="flex gap-6 justify-center py-4 bg-gray-900 fixed w-full z-50">
+    <a href="index.html" class="hover:text-red-500">Home</a>
+    <a href="cars.html" class="hover:text-red-500">Cars</a>
+    <a href="specialdeals.html" class="hover:text-red-500">Special Deals</a>
+    <a href="reviews.html" class="hover:text-red-500">Reviews</a>
+</nav>
+
+<!-- HEADER -->
+<header class="relative h-screen parallax" style="background-image:url('assets/images/car-header.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl font-bold mb-4 animate__animated animate__fadeInDown">IAN RevUp</h1>
+        <p class="text-2xl mb-6 animate__animated animate__fadeInUp animate__delay-1s">
+            Premium Cars — Drive Your Dream
+        </p>
+        <a href="cars.html" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-lg font-bold animate__animated animate__fadeInUp animate__delay-2s">
+            Browse Cars
+        </a>
+    </div>
+</header>
+
+<!-- CARS -->
+<section class="py-20 px-4 md:px-20 bg-gray-800 mobile-padding">
+<h2 class="text-4xl font-bold mb-12 text-center">Available Cars</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-gray-900 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/images/car1.jpg" class="w-full h-56 object-cover" />
+        <div class="p-4">
+            <h3 class="text-2xl font-bold">BMW M3</h3>
+            <p class="text-gray-300">Price: $75,000</p>
+        </div>
+    </div>
+    <div class="bg-gray-900 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/images/car2.jpg" class="w-full h-56 object-cover" />
+        <div class="p-4">
+            <h3 class="text-2xl font-bold">Audi R8</h3>
+            <p class="text-gray-300">Price: $120,000</p>
+        </div>
+    </div>
+    <div class="bg-gray-900 rounded-xl overflow-hidden hover:scale-105 transition">
+        <img src="assets/images/car3.jpg" class="w-full h-56 object-cover" />
+        <div class="p-4">
+            <h3 class="text-2xl font-bold">Mercedes AMG GT</h3>
+            <p class="text-gray-300">Price: $140,000</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="contact-overlay"></div>
+    <div class="contact-container">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-text">Send us your name and email and we’ll get back to you shortly.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
